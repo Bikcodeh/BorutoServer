@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bikcode.ApplicationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-15T03:05:47" hostname="DESKTOP-G0RLDTD" time="0.377">
+  <properties/>
+  <testcase name="testRoot" classname="com.bikcode.ApplicationTest" time="0.377"/>
+  <system-out><![CDATA[2022-01-14 22:05:47.627 [Test worker] INFO  ktor.test - Autoreload is disabled because the development mode is off.
+2022-01-14 22:05:47.627 [Test worker] INFO  ktor.test - Application started in 0.053 seconds.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
