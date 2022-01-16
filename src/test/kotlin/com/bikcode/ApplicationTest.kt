@@ -1,7 +1,6 @@
 package com.bikcode
 
 import com.bikcode.models.ApiResponse
-import com.bikcode.models.Hero
 import com.bikcode.repository.HeroRepository
 import com.bikcode.repository.NEXT_PAGE_KEY
 import com.bikcode.repository.PREV_PAGE_KEY
@@ -12,7 +11,6 @@ import io.ktor.application.*
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.koin.java.KoinJavaComponent.inject
-import kotlin.math.exp
 
 class ApplicationTest {
 
@@ -141,4 +139,48 @@ class ApplicationTest {
         }
         return mapOf(PREV_PAGE_KEY to prevPage, NEXT_PAGE_KEY to nextPage)
     }
+
+    @Test
+    fun `access all heroes endpoint, query non existing page number, assert error`() {
+        withTestApplication(moduleFunction = Application::module) {
+            handleRequest(HttpMethod.Get, "/boruto/heroes?page=6").apply {
+                val expected = ApiResponse(
+                    success = false,
+                    message = "Heroes not found"
+                )
+                assertEquals(
+                    expected = expected,
+                    actual = decodeJson(response.content.toString())
+                )
+
+                assertEquals(
+                    expected = HttpStatusCode.NotFound,
+                    actual = response.status()
+                )
+            }
+        }
+    }
+    @Test
+    fun `access all heroes endpoint, page not number, assert error`() {
+        withTestApplication(moduleFunction = Application::module) {
+            handleRequest(HttpMethod.Get, "/boruto/heroes?page=nan").apply {
+                val expected = ApiResponse(
+                    success = false,
+                    message = "Only numbers allowed"
+                )
+                assertEquals(
+                    expected = expected,
+                    actual = decodeJson(response.content.toString())
+                )
+
+
+                assertEquals(
+                    expected = HttpStatusCode.BadRequest,
+                    actual = response.status()
+                )
+            }
+        }
+    }
+
+    private fun decodeJson(json: String): ApiResponse = Json.decodeFromString<ApiResponse>(json)
 }
