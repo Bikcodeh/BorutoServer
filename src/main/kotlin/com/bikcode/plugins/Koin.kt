@@ -1,11 +1,14 @@
 package com.bikcode.plugins
 
+import com.bikcode.di.koinModule
 import io.ktor.application.*
+import org.koin.core.logger.Level
 import org.koin.ktor.ext.Koin
 import org.koin.logger.slf4jLogger
 
 fun Application.configureKoin() {
-   install(Koin) {
-       slf4jLogger()
-   }
+    install(Koin){
+        slf4jLogger(level = Level.ERROR)
+        modules(koinModule)
+    }
 }
