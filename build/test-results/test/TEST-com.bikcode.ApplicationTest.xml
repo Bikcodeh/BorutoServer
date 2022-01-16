@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bikcode.ApplicationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-01-16T18:34:27" hostname="DESKTOP-G0RLDTD" time="0.685">
+<testsuite name="com.bikcode.ApplicationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-16T18:52:15" hostname="DESKTOP-G0RLDTD" time="0.576">
   <properties/>
-  <testcase name="access root endpoint assert correct information" classname="com.bikcode.ApplicationTest" time="0.441"/>
-  <testcase name="access all heroes endpoint, page not number, assert error" classname="com.bikcode.ApplicationTest" time="0.214"/>
-  <testcase name="access all heroes endpoint, query second page assert correct information" classname="com.bikcode.ApplicationTest" time="0.009"/>
-  <testcase name="access all heroes endpoint assert correct information" classname="com.bikcode.ApplicationTest" time="0.005"/>
-  <testcase name="access all heroes endpoint, query all pages assert correct information" classname="com.bikcode.ApplicationTest" time="0.013"/>
-  <testcase name="access all heroes endpoint, query non existing page number, assert error" classname="com.bikcode.ApplicationTest" time="0.003"/>
-  <system-out><![CDATA[2022-01-16 13:34:28.034 [Test worker] INFO  ktor.test - Autoreload is disabled because the development mode is off.
-2022-01-16 13:34:28.042 [Test worker] INFO  ktor.test - Application started in 0.053 seconds.
+  <testcase name="access non existing endpoint, assert not found" classname="com.bikcode.ApplicationTest" time="0.576"/>
+  <system-out><![CDATA[2022-01-16 13:52:15.221 [Test worker] INFO  ktor.test - Autoreload is disabled because the development mode is off.
+2022-01-16 13:52:15.228 [Test worker] INFO  ktor.test - Application started in 0.05 seconds.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
