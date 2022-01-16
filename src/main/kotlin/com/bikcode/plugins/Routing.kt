@@ -2,6 +2,7 @@ package com.bikcode.plugins
 
 import com.bikcode.routes.getAllHeroes
 import com.bikcode.routes.root
+import com.bikcode.routes.searchHeroes
 import io.ktor.routing.*
 import io.ktor.http.*
 import io.ktor.application.*
@@ -14,6 +15,7 @@ fun Application.configureRouting() {
     routing {
         root()
         getAllHeroes()
+        searchHeroes()
         static("/images") {
             resources("images")
         }
