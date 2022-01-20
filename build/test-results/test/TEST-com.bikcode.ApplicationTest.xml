@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bikcode.ApplicationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-16T18:52:15" hostname="DESKTOP-G0RLDTD" time="0.576">
+<testsuite name="com.bikcode.ApplicationTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2022-01-20T00:32:40" hostname="DESKTOP-G0RLDTD" time="0.67">
   <properties/>
-  <testcase name="access non existing endpoint, assert not found" classname="com.bikcode.ApplicationTest" time="0.576"/>
-  <system-out><![CDATA[2022-01-16 13:52:15.221 [Test worker] INFO  ktor.test - Autoreload is disabled because the development mode is off.
-2022-01-16 13:52:15.228 [Test worker] INFO  ktor.test - Application started in 0.05 seconds.
+  <testcase name="access search heroes endpoint, query an empty hero name, assert empty list as a result" classname="com.bikcode.ApplicationTest" time="0.618"/>
+  <testcase name="access non existing endpoint, assert not found" classname="com.bikcode.ApplicationTest" time="0.006"/>
+  <testcase name="access search heroes endpoint, query hero name, assert multiple heroes result" classname="com.bikcode.ApplicationTest" time="0.006"/>
+  <testcase name="access root endpoint assert correct information" classname="com.bikcode.ApplicationTest" time="0.003"/>
+  <testcase name="access all heroes endpoint, page not number, assert error" classname="com.bikcode.ApplicationTest" time="0.003"/>
+  <testcase name="access search heroes endpoint, query hero name, assert single hero result" classname="com.bikcode.ApplicationTest" time="0.003"/>
+  <testcase name="access all heroes endpoint, query second page assert correct information" classname="com.bikcode.ApplicationTest" time="0.005"/>
+  <testcase name="access all heroes endpoint assert correct information" classname="com.bikcode.ApplicationTest" time="0.004"/>
+  <testcase name="access all heroes endpoint, query all pages assert correct information" classname="com.bikcode.ApplicationTest" time="0.012"/>
+  <testcase name="access search heroes endpoint, query non existing hero name, assert empty list as a result" classname="com.bikcode.ApplicationTest" time="0.003"/>
+  <testcase name="access all heroes endpoint, query non existing page number, assert error" classname="com.bikcode.ApplicationTest" time="0.003"/>
+  <system-out><![CDATA[2022-01-19 19:32:40.818 [Test worker] INFO  ktor.test - Autoreload is disabled because the development mode is off.
+2022-01-19 19:32:40.826 [Test worker] INFO  ktor.test - Application started in 0.05 seconds.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
